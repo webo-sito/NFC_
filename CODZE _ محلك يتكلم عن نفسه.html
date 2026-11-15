@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CODZE | محلك يتكلم عن نفسه</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Jost:wght@300;400;500&display=swap">
+<style>
+:root{--bg:#f4f6f9;--fg:#121820;--mut:#556070;--card:#ffffff;--line:#dde2e8;--acc:#d93f0b;--ink:#0b1016;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1016;--fg:#f2f5f8;--mut:#a3adba;--card:#151c25;--line:#27303b}}
+:root[data-theme="dark"]{--bg:#0b1016;--fg:#f2f5f8;--mut:#a3adba;--card:#151c25;--line:#27303b}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Cairo,sans-serif;overflow-x:hidden}
+section{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:72px 22px;text-align:center;position:relative}
+.w{width:100%;max-width:1060px}
+h1,h2{margin:0;font-weight:900;line-height:1.2}
+h1{font-size:clamp(40px,8vw,84px)}h2{font-size:clamp(32px,6vw,58px)}
+p{color:var(--mut);font-size:clamp(17px,2.4vw,22px);line-height:1.8;margin:14px auto 0;max-width:640px}
+.acc{color:var(--acc)}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .8s var(--d,0s),transform .8s var(--d,0s)}.in .rv,.rv.in{opacity:1;transform:none}
+.bar{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:4px;background:var(--acc);width:0;z-index:9}
+.logo{font-family:Jost,sans-serif;font-weight:300;letter-spacing:.5em;margin-right:-.5em;font-size:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 30px;border-radius:999px;border:0;background:var(--acc);color:#fff;font:700 20px Cairo,sans-serif;cursor:pointer;text-decoration:none;margin:8px}
+.btn.g{background:transparent;color:var(--fg);border:2px solid var(--line)}
+/* glass card */
+.cw{position:relative;width:300px;height:190px;border-radius:16px;padding:20px;display:flex;align-items:center;justify-content:space-between;direction:ltr;color:#1c2430;font-family:Jost,sans-serif;background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(255,255,255,.35) 50%,rgba(205,218,232,.65));border:2px solid #fff;box-shadow:inset 0 0 0 1px rgba(140,158,176,.4),inset 8px 8px 16px rgba(255,255,255,.75),0 26px 34px -14px rgba(25,35,50,.5)}
+.cw::after{content:"";position:absolute;inset:0;border-radius:16px;background:linear-gradient(112deg,rgba(255,255,255,.6),rgba(255,255,255,0) 30%);pointer-events:none}
+.tx{display:flex;flex-direction:column;gap:10px;width:156px;align-items:flex-start}.ttl{font-weight:500;font-size:15px;letter-spacing:.12em;line-height:1.3;text-align:left}
+.qr{padding:6px;background:rgba(255,255,255,.7);border-radius:8px;box-sizing:content-box}
+.st{width:250px;height:22px;margin:4px auto 0;border-radius:5px 5px 14px 14px;background:linear-gradient(180deg,#fff,rgba(200,211,223,.7));border:2px solid #fff;box-shadow:0 18px 22px -8px rgba(25,35,50,.5)}
+.fl{display:flex;flex-direction:column;align-items:center;animation:fl 5s ease-in-out infinite;position:relative;transform:scale(1.15)}
+@keyframes fl{50%{transform:translateY(-14px) scale(1.15)}}
+.ring{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px;border-radius:50%;border:4px solid var(--acc);opacity:0;animation:rg 2.6s infinite}
+@keyframes rg{0%{opacity:.9;transform:scale(.2)}100%{opacity:0;transform:scale(3)}}
+.badge{position:absolute;top:-26px;right:-18px;background:var(--acc);color:#fff;font-weight:700;padding:8px 16px;border-radius:999px;font-size:18px;animation:bd 5s infinite}
+@keyframes bd{0%,30%{opacity:0;transform:scale(.4)}40%,90%{opacity:1;transform:scale(1)}100%{opacity:0}}
+/* phone */
+.ph{width:min(280px,72vw);aspect-ratio:1/2;border-radius:46px;background:#12171e;padding:11px;box-shadow:0 40px 60px -26px rgba(0,0,0,.55);margin:0 auto;position:relative}
+.scr{position:absolute;inset:11px;border-radius:36px;background:#fff;color:#141a22;display:flex;flex-direction:column;align-items:center;padding:56px 18px 0;opacity:0;transition:opacity .5s;font-weight:700}
+.scr.on{opacity:1}.scr b{font-size:22px;font-weight:900}
+.row{width:100%;background:#eef1f5;border-radius:14px;padding:13px 16px;margin-top:10px;display:flex;justify-content:space-between;font-size:16px;opacity:0;transform:translateY(14px)}
+.on .row{animation:up .5s var(--d) both}@keyframes up{to{opacity:1;transform:none}}
+.stars{display:flex;gap:4px;margin-top:40px;direction:ltr}.stars svg{width:36px;height:34px;fill:#f4b400;opacity:0}.on .stars svg{animation:pp .5s var(--d) both}
+@keyframes pp{0%{opacity:0;transform:scale(.3)}70%{transform:scale(1.2)}100%{opacity:1;transform:none}}
+.ok{margin-top:50px;background:var(--acc);color:#fff;border-radius:999px;padding:10px 24px;font-size:17px;opacity:0}.on .ok{animation:pp .5s 1.8s both}
+.tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:26px 0}
+.tab{min-height:48px;padding:0 20px;border-radius:999px;border:2px solid var(--line);background:var(--card);color:var(--fg);font:700 18px Cairo,sans-serif;cursor:pointer}.tab.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.two{display:grid;gap:40px;align-items:center;justify-items:center}@media(min-width:860px){.two{grid-template-columns:1fr 1fr}.two.h{text-align:right}.two.h p{margin-right:0}}
+.cd{background:var(--card);border:1.5px solid var(--line);border-radius:24px;padding:26px 28px;text-align:right}
+.grid{display:grid;gap:16px;margin-top:34px}@media(min-width:760px){.grid.t{grid-template-columns:repeat(3,1fr)}.grid.f{grid-template-columns:repeat(2,1fr)}}
+.big{font-size:clamp(60px,10vw,92px);font-weight:900;line-height:1.1}
+.pro{background:linear-gradient(160deg,#1b222c,#0b1016);color:#fff;border:3px solid var(--acc);position:relative}.pro p{color:#d3dae2;margin:8px 0 0}
+.pro .tag{position:absolute;top:-20px;left:24px;background:var(--acc);padding:5px 18px;border-radius:999px;font-weight:700}
+.chip{display:inline-block;margin:6px;padding:12px 22px;border-radius:999px;border:2px solid var(--line);background:var(--card);font-weight:700;font-size:20px}
+.step{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:26px;font-weight:700;font-size:20px}.step i{font-style:normal;color:var(--acc);animation:ar 1.4s infinite}@keyframes ar{50%{transform:translateX(-8px)}}
+.hint{position:absolute;bottom:20px;font-size:15px;color:var(--mut);animation:ar2 2s infinite}@keyframes ar2{50%{transform:translateY(8px)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="qr" viewBox="0 0 21 21"><g fill="#1c2430"><path fill-rule="evenodd" d="M0 0h7v7H0zM1 1v5h5V1zM14 0h7v7h-7zM15 1v5h5V1zM0 14h7v7H0zM1 15v5h5v-5z"/><rect x="2" y="2" width="3" height="3"/><rect x="16" y="2" width="3" height="3"/><rect x="2" y="16" width="3" height="3"/><path d="M9 0h2v2H9zM9 3h3v2H9zM12 1h1v3h-1zM8 8h2v2H8zM11 8h3v1h-3zM15 9h2v2h-2zM18 8h3v2h-3zM9 11h2v2H9zM12 11h2v3h-2zM8 14h1v4H8zM10 15h2v2h-2zM14 15h3v2h-3zM18 14h3v2h-3zM9 19h3v2H9zM14 18h2v3h-2zM18 18h3v3h-3z"/></g></symbol><symbol id="s" viewBox="0 0 36 34"><polygon points="18,2 22.5,13 34,13.5 25,21 28,32 18,26 8,32 11,21 2,13.5 13.5,13"/></symbol></defs></svg>
+<div class="bar" id="bar"></div>
+
+<section id="s1">
+<div class="w two h">
+<div>
+<div class="logo rv">CODZE</div>
+<h1 class="rv" style="--d:.15s;margin-top:22px">محلك يتكلم<br>عن نفسه <span class="acc">بلمسة.</span></h1>
+<p class="rv" style="--d:.3s">كروت أكريليك NFC تخلّي زبونك يقيّمك ويفتح المنيو ويوصل لكل لينكاتك. من غير تطبيق ومن غير كتابة. وأنا هاوريك إزاي في دقيقة.</p>
+<div class="rv" style="--d:.45s;margin-top:18px"><button class="btn" id="auto">▶ ابدأ العرض التلقائي</button></div>
+</div>
+<div class="rv" style="--d:.3s;padding:30px 0"><div class="fl"><span class="ring"></span><span class="badge">5 نجوم</span><div id="hc"></div><div class="st"></div></div></div>
+</div>
+<div class="hint">اسحب لتحت ↓</div>
+</section>
+
+<section id="s2" style="background:var(--ink);color:#fff">
+<div class="w">
+<h2 class="rv">كافيه جديد؟</h2>
+<h2 class="rv" style="--d:.9s;color:#cfd6df;margin-top:14px">زبونك مبسوط…</h2>
+<h2 class="rv acc" style="--d:1.8s;margin-top:14px">بس مش هيفتكر يقيّمك.</h2>
+<p class="rv" style="--d:2.7s;color:#aab4c0">والتقييمات هي أول حاجة الناس بتبص عليها قبل ما تدخل مكان جديد. الحل إن التقييم يبقى لمسة، مش مجهود.</p>
+</div>
+</section>
+
+<section id="s3">
+<div class="w">
+<h2 class="rv">3 كروت. <span class="acc">لمسة واحدة لكل حاجة.</span></h2>
+<div class="tabs rv" style="--d:.2s"><button class="tab" data-i="0">تقييمات أكتر</button><button class="tab" data-i="1">منيو من غير طباعة</button><button class="tab" data-i="2">كل لينكاتك</button></div>
+<div class="two">
+<div><div class="fl" style="transform:scale(1.1)"><div id="tc"></div><div class="st"></div></div><p id="tp" style="min-height:90px"></p></div>
+<div class="ph rv" style="--d:.3s">
+<div class="scr"><b>قيّم تجربتك</b><span style="font-size:14px;color:#6a7480;font-weight:600">اسم الكافيه</span><div class="stars"><svg style="--d:.4s"><use href="#s"/></svg><svg style="--d:.65s"><use href="#s"/></svg><svg style="--d:.9s"><use href="#s"/></svg><svg style="--d:1.15s"><use href="#s"/></svg><svg style="--d:1.4s"><use href="#s"/></svg></div><div class="ok">شكراً لتقييمك</div></div>
+<div class="scr"><b>المنيو</b><div style="width:100%;margin-top:26px"><div class="row" style="--d:.3s"><span>مشروبات ساخنة</span><span>‹</span></div><div class="row" style="--d:.5s"><span>مشروبات باردة</span><span>‹</span></div><div class="row" style="--d:.7s"><span>حلويات</span><span>‹</span></div><div class="row" style="--d:.9s"><span>سناكس</span><span>‹</span></div></div></div>
+<div class="scr" style="padding-top:44px"><b>تواصل معانا</b><div style="width:100%;margin-top:14px"><div class="row" style="--d:.2s"><span>Instagram</span><span>‹</span></div><div class="row" style="--d:.35s"><span>WhatsApp</span><span>‹</span></div><div class="row" style="--d:.5s"><span>Facebook</span><span>‹</span></div><div class="row" style="--d:.65s"><span>طرق الدفع</span><span>‹</span></div><div class="row" style="--d:.8s"><span>الموقع على الخريطة</span><span>‹</span></div><div class="row" style="--d:.95s"><span>الموقع الإلكتروني</span><span>‹</span></div></div></div>
+</div></div>
+<div class="step rv" style="--d:.4s"><span>قرّب موبايلك</span><i>←</i><span>الصفحة تفتح لوحدها</span><i>←</i><span class="acc">قيّم أو اطلب</span></div>
+</div>
+</section>
+
+<section id="s4">
+<div class="w">
+<h2 class="rv">ليه <span class="acc">الكروت دي</span> بتفرق؟</h2>
+<div class="grid t">
+<div class="cd rv" style="--d:.1s"><h3 style="margin:0;font-size:26px">من غير تطبيق</h3><p style="margin:8px 0 0;font-size:18px">الزبون يقرّب موبايله بس، والصفحة تفتح لوحدها.</p></div>
+<div class="cd rv" style="--d:.25s"><h3 style="margin:0;font-size:26px">من غير كتابة</h3><p style="margin:8px 0 0;font-size:18px">مفيش حد هيدوّر على اسم محلك أو يكتب لينك.</p></div>
+<div class="cd rv" style="--d:.4s"><h3 style="margin:0;font-size:26px">منيو بيتحدّث</h3><p style="margin:8px 0 0;font-size:18px">غيّر المنيو أونلاين من غير ما تطبع كارت جديد.</p></div>
+</div>
+<p class="rv" style="--d:.5s">وشكل الأكريليك الشفاف على الترابيزة بيدّي المحل لمسة فخمة من أول يوم.</p>
+</div>
+</section>
+
+<section id="s5">
+<div class="w">
+<h2 class="rv">اختار اللي <span class="acc">يناسب محلك.</span></h2>
+<div class="grid f">
+<div class="cd rv" style="--d:.1s"><p style="margin:0;font-weight:700">كارت واحد شامل</p><div class="big"><span data-n="400">0</span> <small style="font-size:28px">جنيه</small></div><p style="margin:0;font-size:17px">تقييمات جوجل + منيو رقمي + كل لينكات العملاء + طرق الدفع + اللوكيشن.</p></div>
+<div class="cd pro rv" style="--d:.3s"><span class="tag">وفّر 400 جنيه</span><p style="margin:0;font-weight:700;color:#b6c0cc">باقة الـ 3 كروت</p><div class="big"><span data-n="800">0</span> <small style="font-size:28px">جنيه</small> <s style="font-size:28px;color:#8f9aa8">1,200</s></div><p style="font-size:17px">3 كروت منفصلة: التقييمات + المنيو + اللينكات. يعني الكارت بحوالي 267 جنيه بدل 400.</p></div>
+</div>
+</div>
+</section>
+
+<section id="s6">
+<div class="w">
+<h2 class="rv">وشغلنا <span class="acc">مش كروت بس.</span></h2>
+<p class="rv" style="--d:.15s">CODZE بيجهّز لمحلك الصورة الرقمية كاملة. والموقع اللي بتتفرج عليه دلوقتي نفسه من شغلنا.</p>
+<div style="margin-top:26px"><span class="chip rv" style="--d:.2s">مواقع ويب</span><span class="chip rv" style="--d:.3s">كروت NFC</span><span class="chip rv" style="--d:.4s">منيو مطاعم</span><span class="chip rv" style="--d:.5s">تصميم محلات</span></div>
+</div>
+</section>
+
+<section id="s7" style="background:var(--acc);color:#fff">
+<div class="w">
+<div class="logo rv">CODZE</div>
+<h2 class="rv" style="--d:.15s;margin-top:20px;font-size:clamp(44px,9vw,92px)">ابدأ النهارده.</h2>
+<p class="rv" style="--d:.3s;color:#ffe6dc">قولي اسم محلك وأجهزلك كارت تجريبي باسمه.</p>
+<div class="rv" style="--d:.45s;margin-top:20px"><a class="btn" style="background:#fff;color:#141a22;direction:ltr;font-family:Jost,sans-serif;font-size:26px" href="tel:01066588483">01066588483</a><a class="btn g" style="color:#fff;border-color:#fff;direction:ltr;font-family:Jost,sans-serif" href="https://instagram.com/codze_">Instagram @codze_</a></div>
+</div>
+</section>
+
+<script>
+var Q='<svg class="qr" width="84" height="84"><use href="#qr"/></svg>';
+var ST='<svg width="132" height="26" viewBox="0 0 190 34" fill="#1c2430"><use href="#s" width="36" height="34"/><use href="#s" x="38" width="36" height="34"/><use href="#s" x="76" width="36" height="34"/><use href="#s" x="114" width="36" height="34"/><use href="#s" x="152" width="36" height="34"/></svg>';
+var MN='<svg width="46" height="46" viewBox="0 0 48 48" fill="none" stroke="#1c2430" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="5" width="30" height="38" rx="4"/><path d="M16 15h16M16 22h16M16 29h10"/><circle cx="31" cy="34" r="2"/></svg>';
+var IC='<svg width="132" height="66" viewBox="0 0 190 96" fill="none" stroke="#1c2430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(6,2)"><rect x="3" y="3" width="30" height="30" rx="9"/><circle cx="18" cy="18" r="7"/></g><g transform="translate(78,2)"><path d="M18 3a15 15 0 1 0 0 30 15 15 0 0 0 0-30zM6 33l2-7"/><path d="M13 12c0 7 6 13 12 13l2-3-4-2-2 1c-2-1-4-3-5-5l1-2-2-4z"/></g><g transform="translate(150,2)"><circle cx="18" cy="18" r="15"/><path d="M22 33V20h4M17 20h9M22 20v-4c0-3 1-4 4-4"/></g><g transform="translate(6,56)"><rect x="2" y="7" width="32" height="22" rx="4"/><path d="M2 14h32M8 23h8"/></g><g transform="translate(78,56)"><path d="M18 33s11-9 11-18a11 11 0 0 0-22 0c0 9 11 18 11 18z"/><circle cx="18" cy="15" r="4"/></g><g transform="translate(150,56)"><circle cx="18" cy="18" r="15"/><path d="M3 18h30M18 3c-8 8-8 22 0 30M18 3c8 8 8 22 0 30"/></g></svg>';
+function card(t,m,x){return '<div class="cw"><div class="tx"><div class="ttl" style="'+(x||'')+'">'+t+'</div>'+m+'</div>'+Q+'</div>'}
+var C=[card('LEAVE US<br>A REVIEW',ST),card('DIGITAL<br>MENU',MN),card('ALL YOUR LINKS<br>IN ONE PLACE',IC,'font-size:12px')];
+var TP=['زبونك يقرّب موبايله ويقيّمك على جوجل في ثواني. كل تقييم 5 نجوم بيزوّد ثقة الناس فيك.','المنيو يفتح فوراً على موبايل الزبون. من غير ورق ومن غير طباعة.','إنستجرام وواتساب وفيسبوك والدفع واللوكيشن والموقع، كلها في لمسة واحدة.'];
+document.getElementById('hc').innerHTML=C[0];
+var tabs=[].slice.call(document.querySelectorAll('.tab')),scr=[].slice.call(document.querySelectorAll('.scr')),cur=0,tm;
+function sel(i,u){cur=i;tabs.forEach(function(t,k){t.classList.toggle('on',k==i)});scr.forEach(function(s,k){s.classList.remove('on');if(k==i){void s.offsetWidth;s.classList.add('on')}});document.getElementById('tc').innerHTML=C[i];document.getElementById('tp').textContent=TP[i];if(u){clearInterval(tm);tm=setInterval(function(){sel((cur+1)%3)},5200)}}
+tabs.forEach(function(t,k){t.onclick=function(){sel(k,1)}});sel(0,1);
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-n]').forEach(function(n){var to=+n.dataset.n,s=performance.now();(function f(t){var p=Math.min((t-s)/1200,1);n.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(s)})}})},{threshold:.3});
+[].slice.call(document.querySelectorAll('section')).forEach(function(s){io.observe(s)});
+var secs=[].slice.call(document.querySelectorAll('section')),bar=document.getElementById('bar'),ap,aj=0,btn=document.getElementById('auto');
+addEventListener('scroll',function(){bar.style.width=(scrollY/(document.documentElement.scrollHeight-innerHeight)*100)+'%'},{passive:true});
+function stop(){clearInterval(ap);ap=0;btn.textContent='▶ ابدأ العرض التلقائي'}
+function go(){aj++;if(aj>=secs.length){stop();return}secs[aj].scrollIntoView({behavior:'smooth'})}
+btn.onclick=function(){if(ap){stop();return}aj=0;btn.textContent='⏸ إيقاف';secs[1].scrollIntoView({behavior:'smooth'});aj=1;ap=setInterval(go,7500);['wheel','touchstart','keydown'].forEach(function(e){addEventListener(e,stop,{once:true,passive:true})})};
+</script>
+</body>
+</html>
